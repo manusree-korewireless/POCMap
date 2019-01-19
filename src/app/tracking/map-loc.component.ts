@@ -20,7 +20,7 @@ export class MapLocComponent implements OnInit{
     lng: Number[];
     lat_init: Number = 10.0118;
     lng_init: Number = 76.3664;
-    zoom : Number = 12;
+    zoom : Number = 14;
     
     
     constructor(private getDataService: GetDataService) {
