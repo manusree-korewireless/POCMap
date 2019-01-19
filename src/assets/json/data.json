@@ -1,0 +1,18 @@
+{
+    "iMEI": "000013612345678",
+    "actualDate": "2018-08-30T08:03:31",
+    "location": {
+      "lat": 29.566888,
+      "lon": 106.45424
+    },
+    "direction": 309.62,
+    "odotemer": 487.597,
+    "speed": 40,
+    "analog": 1,
+    "temp": 1,
+    "eventCode": 2,
+    "textM": "9",
+    "fuel": 0,
+    "temp2": 2,
+    "voltage": 12
+   }
