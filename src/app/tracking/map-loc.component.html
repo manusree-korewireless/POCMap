@@ -1,25 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
     <h1>{{ pageTitle }}</h1>
+    <div #map id="map-container">
+            <agm-map [latitude]="lat_init" [longitude]="lng_init" [zoom]="zoom" >
+                    <agm-marker [latitude]="lat_init" [longitude]="lng_init" iconUrl="assets/car_icon.png"></agm-marker>
+                    <!-- <agm-marker 
+                            *ngFor="let c of coords"
+                            [latitude]="c.lat"
+                            [longitude]="c.lon">
+                            
+                    </agm-marker> -->
+        
+                    <agm-polyline [editable]="false">
+                            <agm-polyline-point *ngFor="let c of coords" 
+                                [latitude]="c.lat"
+                                [longitude]="c.lon">
+                            </agm-polyline-point>
+                        </agm-polyline>
+        
+            </agm-map>
+        
+    </div>
     
-    <agm-map [latitude]="lat_init" [longitude]="lng_init" [zoom]="zoom" >
-            <agm-marker [latitude]="lat_init" [longitude]="lng_init"></agm-marker>
-            <!-- <agm-marker 
-                    *ngFor="let c of coords"
-                    [latitude]="c.lat"
-                    [longitude]="c.lon">
-                    
-            </agm-marker> -->
-
-            <agm-polyline [editable]="true">
-                    <agm-polyline-point *ngFor="let c of coords" 
-                        [latitude]="c.lat"
-                        [longitude]="c.lon">
-                    </agm-polyline-point>
-                </agm-polyline>
-
-    </agm-map>
-
     <!-- <agm-map 
   [latitude]="lat"
   [longitude]="lng"
