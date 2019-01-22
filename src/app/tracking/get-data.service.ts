@@ -14,7 +14,8 @@ export class GetDataService {
   constructor(private http: HttpClient) { }
 
   getLocations(): Observable<ILocation> {
-    return this.http.get<ILocation>(this.locUrl).pipe(
+    
+    return this.http.get<ILocation>("http://localhost:3000/map").pipe(
       tap(data => console.log('Loc: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ILocation, ICoord } from "./location";
 import { GetDataService } from "./get-data.service";
+import {Observable,interval} from 'rxjs'
 
 @Component({
     selector: 'map-loc',
@@ -32,11 +33,11 @@ export class MapLocComponent implements OnInit{
       }
 
     ngOnInit(): void {
-        this.getDataService.getLocations().subscribe(
+        interval(10000).subscribe(a=> {this.getDataService.getLocations().subscribe(
             locations => {
                this.locations = locations;
                this.locations.location.forEach(item => {
-                this.coords.push(item);
+                this.coords.push(locations.location[0]);
                });
               // console.log("coords array: "+this.coords);
                console.log("printing each lat and lon in coords")
@@ -44,11 +45,9 @@ export class MapLocComponent implements OnInit{
                    console.log(element.lat);
                    console.log(element.lon);
                });
-               console.log("Lat: "+ this.lat_init);
-               console.log("Lng: "+ this.lng_init);
                //debugger;
             }
-        );
+        );})
         
     }
 }
