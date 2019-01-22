@@ -33,7 +33,7 @@ export class MapLocComponent implements OnInit{
       }
 
     ngOnInit(): void {
-        interval(10000).subscribe(a=> {this.getDataService.getLocations().subscribe(
+        interval(2000).subscribe(a=> {this.getDataService.getLocations().subscribe(
             locations => {
                this.locations = locations;
                this.locations.location.forEach(item => {
@@ -41,7 +41,9 @@ export class MapLocComponent implements OnInit{
                });
               // console.log("coords array: "+this.coords);
                console.log("printing each lat and lon in coords")
-               this.coords.forEach(element => {
+               this.coords.forEach(element => { 
+                this.lat_init = element.lat;
+                this.lng_init = element.lon;
                    console.log(element.lat);
                    console.log(element.lon);
                });

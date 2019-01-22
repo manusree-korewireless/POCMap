@@ -12,8 +12,8 @@ router.get('/map', function(req, res, next) {
   var loc = { "iMEI": "000013612345678",
     "location": 
         [{
-            "lat": 10.011818 + 1000000/a,
-            "lon": 76.366180 + 1000000/a 
+            "lat": 10.011818 + Math.random()/100,
+            "lon": 76.366180 + Math.random()/100
         }]
       }
   res.send(loc);
